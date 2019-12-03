@@ -15,21 +15,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello world" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8K-ZI-d1c">
-                                <rect key="frame" x="164" y="314" width="86" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdY-Pe-OXQ">
+                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                                <color key="barTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Site Web" id="FG8-wH-XdT"/>
+                                </items>
+                            </navigationBar>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nie-J0-uJa">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="barTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Places Where You Can't Go" id="Zgr-DO-jNT"/>
+                                </items>
+                            </navigationBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OLl-6m-SIs">
+                                <rect key="frame" x="0.0" y="88" width="414" height="730"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Hhm-qt-lmy">
+                                    <size key="itemSize" width="414" height="731"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="xbY-U5-g0L"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="1TP-ou-KId"/>
+                                </connections>
+                            </collectionView>
+                          
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="nie-J0-uJa" firstAttribute="leading" secondItem="QdY-Pe-OXQ" secondAttribute="leading" id="6L2-no-Y3y"/>
+                            <constraint firstItem="OLl-6m-SIs" firstAttribute="top" secondItem="nie-J0-uJa" secondAttribute="bottom" id="8Zf-7c-bwk"/>
+                            <constraint firstItem="nie-J0-uJa" firstAttribute="trailing" secondItem="OLl-6m-SIs" secondAttribute="trailing" id="9eY-sd-ROP"/>
+                            <constraint firstItem="QdY-Pe-OXQ" firstAttribute="top" secondItem="OLl-6m-SIs" secondAttribute="bottom" id="EFP-Yq-s65"/>
+                            <constraint firstItem="nie-J0-uJa" firstAttribute="trailing" secondItem="QdY-Pe-OXQ" secondAttribute="trailing" id="GfC-Rs-FWG"/>
+                            <constraint firstItem="QdY-Pe-OXQ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="QME-fS-Bzk"/>
+                            <constraint firstItem="OLl-6m-SIs" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Rv5-Dl-vSD"/>
+                            <constraint firstItem="OLl-6m-SIs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Z7n-8e-I1x"/>
+                            <constraint firstItem="nie-J0-uJa" firstAttribute="leading" secondItem="OLl-6m-SIs" secondAttribute="leading" id="dRx-UB-SEW"/>
+                            <constraint firstItem="nie-J0-uJa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kBh-5I-VtD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="OLl-6m-SIs" id="crm-vw-Foy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="138"/>
+            <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
         </scene>
     </scenes>
 </document>

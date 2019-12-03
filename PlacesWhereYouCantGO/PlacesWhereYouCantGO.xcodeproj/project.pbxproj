@@ -13,6 +13,8 @@
 		BDE40DAF2396499300353A71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDE40DAD2396499300353A71 /* Main.storyboard */; };
 		BDE40DB12396499500353A71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDE40DB02396499500353A71 /* Assets.xcassets */; };
 		BDE40DB42396499500353A71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDE40DB22396499500353A71 /* LaunchScreen.storyboard */; };
+		BDE40DBD239657BD00353A71 /* PlacesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE40DBB239657BD00353A71 /* PlacesCollectionViewCell.swift */; };
+		BDE40DBE239657BD00353A71 /* PlacesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDE40DBC239657BD00353A71 /* PlacesCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		BDE40DB02396499500353A71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BDE40DB32396499500353A71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BDE40DB52396499500353A71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDE40DBB239657BD00353A71 /* PlacesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesCollectionViewCell.swift; sourceTree = "<group>"; };
+		BDE40DBC239657BD00353A71 /* PlacesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlacesCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				BDE40DB02396499500353A71 /* Assets.xcassets */,
 				BDE40DB22396499500353A71 /* LaunchScreen.storyboard */,
 				BDE40DB52396499500353A71 /* Info.plist */,
+				BDE40DBB239657BD00353A71 /* PlacesCollectionViewCell.swift */,
+				BDE40DBC239657BD00353A71 /* PlacesCollectionViewCell.xib */,
 			);
 			path = PlacesWhereYouCantGO;
 			sourceTree = "<group>";
@@ -125,6 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDE40DBE239657BD00353A71 /* PlacesCollectionViewCell.xib in Resources */,
 				BDE40DB42396499500353A71 /* LaunchScreen.storyboard in Resources */,
 				BDE40DB12396499500353A71 /* Assets.xcassets in Resources */,
 				BDE40DAF2396499300353A71 /* Main.storyboard in Resources */,
@@ -138,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDE40DBD239657BD00353A71 /* PlacesCollectionViewCell.swift in Sources */,
 				BDE40DAC2396499300353A71 /* ViewController.swift in Sources */,
 				BDE40DA82396499300353A71 /* AppDelegate.swift in Sources */,
 				BDE40DAA2396499300353A71 /* SceneDelegate.swift in Sources */,
