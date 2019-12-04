@@ -40,6 +40,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         let mescoords = locations[0]
         let coordinate2d = CLLocationCoordinate2D(latitude: mescoords.coordinate.latitude, longitude: mescoords.coordinate.longitude)
         let monpoint = Poi(title: "Ma position", coordinate: coordinate2d)
+        let coord = CLLocation(latitude: latitudeInit, longitude: longitudeInit)
+        let distance = mescoords.distance(from: coord) / 1000
         map.addAnnotation(monpoint)
     }
 }
