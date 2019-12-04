@@ -8,227 +8,259 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    @IBOutlet var collectionView: UICollectionView!
+struct Place {
+    let longitude: float_t
+    let latitude: float_t
+    let title: String
+    let image: String
+    let pays: String
+    let site: String
+    let desc: String
+}
 
-    var api = [
-        "Tour Eiffel":
-        [
-            "Longitude": 48.858472,
-            "Latitude": 2.294496,
-            "Image": "Tour-Eiffel.jpg",
-            "Pays": "France",
-            "Site": "https://www.toureiffel.paris/fr",
-            "Desc": ""
-        ],
-        "Tour de Pise":
-        [
-            "Longitude": 43.723130,
-            "Latitude": 10.396618,
-            "Image": "Tour-de-pise.jpeg",
-            "Pays": "Italie",
-            "Site": "http://www.torrepisa.com/torre-di-pisa/",
-            "Desc": ""
-        ],
-        "Tour Perret":
-        [
-            "Longitude": 45.185203,
-            "Latitude": 5.735433,
-            "Image": "Tour-Perret.jpg",
-            "Pays": "France",
-            "Site": "https://www.grenoble-tourisme.com/fr/catalogue/activite/tour-perret-35439/",
-            "Desc": ""
-        ],
-        "Big Ben":
-        [
-            "Longitude": 51.500916,
-            "Latitude": -0.124690,
-            "Image": "Big-Ben.jpg",
-            "Pays": "Angleterre",
-            "Site": "http://monumentsdelondres.com/big-ben",
-            "Desc": ""
-        ],
-        "Pyramide de Gizeh":
-        [
-            "Longitude": 29.977594,
-            "Latitude": 31.132538,
-            "Image": "Pyramide-de-Gizeh.jpg",
-            "Pays": "Egypte",
-            "Site": "https://www.passion-egyptienne.fr/Gizeh%20site.htm",
-            "Desc": ""
-        ],
-        "Statue de la Liberté":
-        [
-            "Longitude": 40.689453,
-            "Latitude": -74.044157,
-            "Image": "Statue-de-la-liberte.jpg",
-            "Pays": "Etats-Unis",
-            "Site": "https://www.nps.gov/stli/index.htm",
-            "Desc": ""
-        ],
-        "Opéra de Sydney":
-        [
-            "Longitude": -33.856562,
-            "Latitude": 151.215565,
-            "Image": "Opera-sydney.jpg",
-            "Pays": "Australie",
-            "Site":  "https://www.sydneyoperahouse.com/",
-            "Desc": ""
-        ],
-        "Grande muraille de Chine":
-        [
-            "Longitude": 40.433686,
-            "Latitude": 116.573375,
-            "Image": "Grande-muraille-de-Chine.jpg",
-            "Pays": "Chine",
-            "Site": "https://www.lamurailledechine.net/",
-            "Desc": ""
-        ],
-        "Christ rédempteur":
-        [
-            "Longitude": -22.951738,
-            "Latitude": -43.210029,
-            "Image": "Christ-redempteur.jpg",
-            "Pays": "Brésil",
-            "Site": "https://www.merveilles-du-monde.com/Christ-redempteur/",
-            "Desc": ""
-        ],
-        "Taj Mahal":
-        [
-            "Longitude": 27.175412,
-            "Latitude": 78.042700,
-            "Image": "Taj-Mahal.jpeg",
-            "Pays": "Inde",
-            "Site": "https://www.tajmahal.gov.in/",
-            "Desc": ""
-        ],
-        "Mont Saint-Michel":
-        [
-            "Longitude": 48.636430,
-            "Latitude": -1.509438,
-            "Image": "Mont-Saint-Michel.jpg",
-            "Pays": "France",
-            "Site": "https://www.ot-montsaintmichel.com/index.htm",
-            "Desc": ""
-        ],
-        "Kremlin":
-        [
-            "Longitude": 55.752060,
-            "Latitude": 37.617515,
-            "Image": "Kremlin.jpg",
-            "Pays": "Russie",
-            "Site": "https://www.kreml.ru/en-Us/museums-moscow-kremlin/",
-            "Desc": ""
-        ],
-        "Sagrada Familia":
-        [
-            "Longitude": 41.403693,
-            "Latitude": 2.174376,
-            "Image": "Sagrada-Familia.jpg",
-            "Pays": "Espagne",
-            "Site": "https://sagradafamilia.org/en/home",
-            "Desc": ""
-        ],
-        "Porte de Brandebourg":
-        [
-            "Longitude": 52.516327,
-            "Latitude": 13.377693,
-            "Image": "Porte-de-Brandebourg.jpg",
-            "Pays": "Allemagne",
-            "Site": "https://www.berlin.de/fr/monuments/3560266-3104069-porte-de-brandebourg.fr.html",
-            "Desc": ""
-        ],
-        "Temple du Buddha d'émeraude":
-        [
-            "Longitude": 13.751998,
-            "Latitude": 100.493273,
-            "Image": "Temple-du-buddha.jpg",
-            "Pays": "Thaïlande",
-            "Site": "https://vivre-en-thailande.com/wat-phra-kaeo-temple-bouddha-demeraude/3561/",
-            "Desc": ""
-        ],
-        "Statue de l'Île de Pâques":
-        [
-            "Longitude": -27.110854,
-            "Latitude": -109.351277,
-            "Image": "Statue-ile-de-pâques.jpg",
-            "Pays": "Chili",
-            "Site": "https://www.voyage-au-chili.com/chili_iledepaques.php",
-            "Desc": ""
-        ],
-        "Chute du Niagara":
-        [
-            "Longitude": 43.093335,
-            "Latitude": -79.073071,
-            "Image": "Chute-du-Niagara.jpg",
-            "Pays": "Etats-Unis",
-            "Site": "https://fr.niagarafallstourism.com/",
-            "Desc": ""
-        ],
-        "Sainte-Sophie":
-        [
-            "Longitude": 41.008625,
-            "Latitude": 28.980152,
-            "Image": "Sainte-Sophie.jpg",
-            "Pays": "Turquie",
-            "Site": "http://www.istanbul-city.fr/guide-istanbul/sainte-sophie-ayasofya/",
-            "Desc": ""
-        ],
-        "Chichen Itza":
-        [
-            "Longitude": 20.684292,
-            "Latitude": -88.567783,
-            "Image": "Chichen-Itza.jpg",
-            "Pays": "Mexique",
-            "Site": "http://mundomaya.travel/fr/arqueologia/top-10/item/chichen-itza.html",
-            "Desc": ""
-        ],
-        "Fort de la Bastille":
-        [
-            "Longitude": 45.198889,
-            "Latitude": 5.725335,
-            "Image": "Fort-de-la-Bastille.jpg",
-            "Pays": "France",
-            "Site": "https://bastille-grenoble.fr/",
-            "Desc": ""
-        ],
-        "Atomium":
-        [
-            "Longitude": 50.894954,
-            "Latitude": 4.341551,
-            "Image": "Atomium.jpg",
-            "Pays": "Belgique",
-            "Site": "https://atomium.be/home/cover",
-            "Desc": ""
-        ],
-        "Acropole":
-        [
-            "Longitude": 37.971538,
-            "Latitude": 23.725751,
-            "Image": "Acropole.jpg",
-            "Pays": "Grèce",
-            "Site": "http://monumentsathenes.com/acropole",
-            "Desc": ""
-        ]
-    ] as [String : Any]
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var navBar: UINavigationBar!
+    
+    var indexPath: IndexPath?
+    
+    let places = [
+        Place(
+            longitude: 48.858472,
+            latitude: 2.294496,
+            title: "Tour Eiffel",
+            image: "Tour-Eiffel.jpg",
+            pays: "France",
+            site: "https://www.toureiffel.paris/fr",
+            desc: ""
+        ),
+        Place(
+            longitude: 43.723130,
+            latitude: 10.396618,
+            title: "Tour de Pise",
+            image: "Tour-de-pise.jpeg",
+            pays: "Italie",
+            site: "http://www.torrepisa.com/torre-di-pisa/",
+            desc: ""
+        ),
+        Place(
+            longitude: 45.185203,
+            latitude: 5.735433,
+            title: "Tour Perret",
+            image: "Tour-Perret.jpg",
+            pays: "France",
+            site: "https://www.grenoble-tourisme.com/fr/catalogue/activite/tour-perret-35439/",
+            desc: ""
+        ),
+        Place(
+            longitude: 51.500916,
+            latitude: -0.124690,
+            title: "Big Ben",
+            image: "Big-Ben.jpg",
+            pays: "Angleterre",
+            site: "http://monumentsdelondres.com/big-ben",
+            desc: ""
+        ),
+        Place(
+            longitude: 29.977594,
+            latitude: 31.132538,
+            title: "Pyramide de Gizeh",
+            image: "Pyramide-de-Gizeh.jpg",
+            pays: "Egypte",
+            site: "https://www.passion-egyptienne.fr/Gizeh%20site.htm",
+            desc: ""
+        ),
+        Place(
+            longitude: 40.689453,
+            latitude: -74.044157,
+            title: "Statue de la Liberté",
+            image: "Statue-de-la-liberte.jpg",
+            pays: "Etats-Unis",
+            site: "https://www.nps.gov/stli/index.htm",
+            desc: ""
+        ),
+        Place(
+            longitude: -33.856562,
+            latitude: 151.215565,
+            title: "Opéra de Sydney",
+            image: "Opera-sydney.jpg",
+            pays: "Australie",
+            site:  "https://www.sydneyoperahouse.com/",
+            desc: ""
+        ),
+        Place(
+            longitude: 40.433686,
+            latitude: 116.573375,
+            title: "Grande muraille de Chine",
+            image: "Grande-muraille-de-Chine.jpg",
+            pays: "Chine",
+            site: "https://www.lamurailledechine.net/",
+            desc: ""
+        ),
+        Place(
+            longitude: -22.951738,
+            latitude: -43.210029,
+            title: "Christ rédempteur",
+            image: "Christ-redempteur.jpg",
+            pays: "Brésil",
+            site: "https://www.merveilles-du-monde.com/Christ-redempteur/",
+            desc: ""
+        ),
+        Place(
+            longitude: 27.175412,
+            latitude: 78.042700,
+            title: "Taj Mahal",
+            image: "Taj-Mahal.jpeg",
+            pays: "Inde",
+            site: "https://www.tajmahal.gov.in/",
+            desc: ""
+        ),
+        Place(
+            longitude: 48.636430,
+            latitude: -1.509438,
+            title: "Mont Saint-Michel",
+            image: "Mont-Saint-Michel.jpg",
+            pays: "France",
+            site: "https://www.ot-montsaintmichel.com/index.htm",
+            desc: ""
+        ),
+        Place(
+            longitude: 55.752060,
+            latitude: 37.617515,
+            title: "Kremlin",
+            image: "Kremlin.jpg",
+            pays: "Russie",
+            site: "https://www.kreml.ru/en-Us/museums-moscow-kremlin/",
+            desc: ""
+        ),
+        Place(
+            longitude: 41.403693,
+            latitude: 2.174376,
+            title: "Sagrada Familia",
+            image: "Sagrada-Familia.jpg",
+            pays: "Espagne",
+            site: "https://sagradafamilia.org/en/home",
+            desc: ""
+        ),
+        Place(
+            longitude: 52.516327,
+            latitude: 13.377693,
+            title: "Porte de Brandebourg",
+            image: "Porte-de-Brandebourg.jpg",
+            pays: "Allemagne",
+            site: "https://www.berlin.de/fr/monuments/3560266-3104069-porte-de-brandebourg.fr.html",
+            desc: ""
+        ),
+        Place(
+            longitude: 13.751998,
+            latitude: 100.493273,
+            title: "Temple du Buddha",
+            image: "Temple-du-buddha.jpg",
+            pays: "Thaïlande",
+            site: "https://vivre-en-thailande.com/wat-phra-kaeo-temple-bouddha-demeraude/3561/",
+            desc: ""
+        ),
+        Place(
+            longitude: -27.110854,
+            latitude: -109.351277,
+            title: "Statue de l'Île de Pâques",
+            image: "Statue-ile-de-pâques.jpg",
+            pays: "Chili",
+            site: "https://www.voyage-au-chili.com/chili_iledepaques.php",
+            desc: ""
+        ),
+        Place(
+            longitude: 43.093335,
+            latitude: -79.073071,
+            title: "Chute du Niagara",
+            image: "Chute-du-Niagara.jpg",
+            pays: "Etats-Unis",
+            site: "https://fr.niagarafallstourism.com/",
+            desc: ""
+        ),
+        Place(
+            longitude: 41.008625,
+            latitude: 28.980152,
+            title: "Sainte-Sophie",
+            image: "Sainte-Sophie.jpg",
+            pays: "Turquie",
+            site: "http://www.istanbul-city.fr/guide-istanbul/sainte-sophie-ayasofya/",
+            desc: ""
+        ),
+        Place(
+            longitude: 20.684292,
+            latitude: -88.567783,
+            title: "Chichen Itza",
+            image: "Chichen-Itza.jpg",
+            pays: "Mexique",
+            site: "http://mundomaya.travel/fr/arqueologia/top-10/item/chichen-itza.html",
+            desc: ""
+        ),
+        Place(
+            longitude: 45.198889,
+            latitude: 5.725335,
+            title: "Fort de la Bastille",
+            image: "Fort-de-la-Bastille.jpg",
+            pays: "France",
+            site: "https://bastille-grenoble.fr/",
+            desc: ""
+        ),
+        Place(
+            longitude: 50.894954,
+            latitude: 4.341551,
+            title: "Atomium",
+            image: "Atomium.jpg",
+            pays: "Belgique",
+            site: "https://atomium.be/home/cover",
+            desc: ""
+        ),
+        Place(
+            longitude: 37.971538,
+            latitude: 23.725751,
+            title: "Acropole",
+            image: "Acropole.jpg",
+            pays: "Grèce",
+            site: "http://monumentsathenes.com/acropole",
+            desc: ""
+        ),
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         collectionView.register(UINib(nibName: "PlacesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "placesCollectionViewCell")
-        
+    
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-           return 1
+        return places.count
        }
        
        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "placesCollectionViewCell", for: indexPath)
             as! PlacesCollectionViewCell
-        cell.displayContent(title: "TEST")
+        let place = places[indexPath.row]
+        
+        cell.displayContent(imagesrc: place.image, title: place.title, country: place.pays, distance: 5000, price: 150)
+        
         return cell
        }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+      
+        return CGSize(width: UIScreen.main.bounds.width, height: collectionView.frame.height)
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        for cell in collectionView.visibleCells {
+            indexPath = collectionView.indexPath(for: cell)
+        }
+    }
+    
+//    func webSiteAction() {
+//        print("la cellule est \(indexPath?.row)")
+//    }
 }
 
