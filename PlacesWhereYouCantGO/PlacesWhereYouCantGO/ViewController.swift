@@ -232,6 +232,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     }
     
+    @IBAction func showMap() {
+        let mapViewController = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "mapViewController") as? MapViewController
+        self.navigationController?.pushViewController(mapViewController!, animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return places.count
        }
