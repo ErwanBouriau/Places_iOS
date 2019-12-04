@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="y8c-CI-YUg">
-
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="y8c-CI-YUg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
@@ -27,35 +26,13 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PlacesWhereYouCantGO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nie-J0-uJa">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <color key="barTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Site Web" id="FG8-wH-XdT">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="hzi-Jo-t6A">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="H1Q-CU-5jy">
-                                                <rect key="frame" x="20" y="7" width="92" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Map"/>
-                                                <connections>
-                                                    <action selector="showMap" destination="BYZ-38-t0r" eventType="touchUpInside" id="CIE-5X-hsW"/>
-                                                </connections>
-                                            </button>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OLl-6m-SIs">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OLl-6m-SIs">
                                 <rect key="frame" x="0.0" y="88" width="414" height="730"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="wmq-3G-GlI">
@@ -73,16 +50,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="nie-J0-uJa" firstAttribute="leading" secondItem="QdY-Pe-OXQ" secondAttribute="leading" id="6L2-no-Y3y"/>
-                            <constraint firstItem="OLl-6m-SIs" firstAttribute="top" secondItem="nie-J0-uJa" secondAttribute="bottom" id="8Zf-7c-bwk"/>
-                            <constraint firstItem="nie-J0-uJa" firstAttribute="trailing" secondItem="OLl-6m-SIs" secondAttribute="trailing" id="9eY-sd-ROP"/>
-                            <constraint firstItem="QdY-Pe-OXQ" firstAttribute="top" secondItem="OLl-6m-SIs" secondAttribute="bottom" id="EFP-Yq-s65"/>
-                            <constraint firstItem="nie-J0-uJa" firstAttribute="trailing" secondItem="QdY-Pe-OXQ" secondAttribute="trailing" id="GfC-Rs-FWG"/>
-                            <constraint firstItem="QdY-Pe-OXQ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="QME-fS-Bzk"/>
+                            <constraint firstAttribute="top" secondItem="OLl-6m-SIs" secondAttribute="bottom" id="EFP-Yq-s65"/>
+                            <constraint firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="QME-fS-Bzk"/>
                             <constraint firstItem="OLl-6m-SIs" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Rv5-Dl-vSD"/>
                             <constraint firstItem="OLl-6m-SIs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Z7n-8e-I1x"/>
-                            <constraint firstItem="nie-J0-uJa" firstAttribute="leading" secondItem="OLl-6m-SIs" secondAttribute="leading" id="dRx-UB-SEW"/>
-                            <constraint firstItem="nie-J0-uJa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kBh-5I-VtD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -91,7 +62,7 @@
                         <outlet property="collectionView" destination="OLl-6m-SIs" id="crm-vw-Foy"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <navigationItem id="q2E-Rj-Rxo"/>
             </objects>
             <point key="canvasLocation" x="28" y="96"/>
         </scene>
@@ -130,4 +101,3 @@
         </scene>
     </scenes>
 </document>
-

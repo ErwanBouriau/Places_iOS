@@ -32,7 +32,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "235"
             endingLineNumber = "235"
-            landmarkName = "collectionView(_:numberOfItemsInSection:)"
+            landmarkName = "showMap()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
