@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet var collectionView: UICollectionView!
+    
 
     var api = [
         "Tour Eiffel":
@@ -218,6 +219,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         collectionView.register(UINib(nibName: "PlacesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "placesCollectionViewCell")
         
+    }
+    
+    @IBAction func showMap() {
+        let mapViewController = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "mapViewController") as? MapViewController
+        self.navigationController?.pushViewController(mapViewController!, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
