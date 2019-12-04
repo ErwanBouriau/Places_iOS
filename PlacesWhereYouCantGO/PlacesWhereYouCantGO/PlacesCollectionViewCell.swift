@@ -21,9 +21,17 @@ class PlacesCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func displayContent(title: String) {
+    func displayContent(imagesrc: String, title: String, country: String, distance: Int, price: Int) {
+        placeImage.image = UIImage(named: imagesrc)
         placeName.text = title
-        print(title)
+        placeCountry.text = country
+        if (distance < 1000) {
+            placeDistance.text = String(distance) + " m"
+        }
+        else {
+            placeDistance.text = String(distance/1000) + " km"
+        }
+        placePrice.text = String(price) + " €"
     }
 
 }
