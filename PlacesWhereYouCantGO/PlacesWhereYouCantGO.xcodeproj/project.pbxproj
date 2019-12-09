@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C673422239E446700D2C0E0 /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C673421239E446700D2C0E0 /* Places.swift */; };
+		0C673424239E51CA00D2C0E0 /* PlaceContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C673423239E51CA00D2C0E0 /* PlaceContext.swift */; };
 		0CC5A7C32397A59E00155933 /* Poi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC5A7C22397A59E00155933 /* Poi.swift */; };
 		0CC5A7C52397ABBA00155933 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC5A7C42397ABBA00155933 /* MapViewController.swift */; };
 		0CC5A7C82397B67900155933 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CC5A7C72397B67900155933 /* CoreLocation.framework */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C673421239E446700D2C0E0 /* Places.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
+		0C673423239E51CA00D2C0E0 /* PlaceContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceContext.swift; sourceTree = "<group>"; };
 		0CC5A7C22397A59E00155933 /* Poi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poi.swift; sourceTree = "<group>"; };
 		0CC5A7C42397ABBA00155933 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0CC5A7C72397B67900155933 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -87,6 +91,8 @@
 				BDE40DB52396499500353A71 /* Info.plist */,
 				BDE40DBB239657BD00353A71 /* PlacesCollectionViewCell.swift */,
 				BDE40DBC239657BD00353A71 /* PlacesCollectionViewCell.xib */,
+				0C673421239E446700D2C0E0 /* Places.swift */,
+				0C673423239E51CA00D2C0E0 /* PlaceContext.swift */,
 			);
 			path = PlacesWhereYouCantGO;
 			sourceTree = "<group>";
@@ -166,8 +172,10 @@
 				0CC5A7C32397A59E00155933 /* Poi.swift in Sources */,
 				0CC5A7C52397ABBA00155933 /* MapViewController.swift in Sources */,
 				BDE40DBD239657BD00353A71 /* PlacesCollectionViewCell.swift in Sources */,
+				0C673422239E446700D2C0E0 /* Places.swift in Sources */,
 				BDE40DAC2396499300353A71 /* ViewController.swift in Sources */,
 				BDE40DA82396499300353A71 /* AppDelegate.swift in Sources */,
+				0C673424239E51CA00D2C0E0 /* PlaceContext.swift in Sources */,
 				BDE40DAA2396499300353A71 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

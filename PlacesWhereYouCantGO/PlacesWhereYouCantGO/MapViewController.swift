@@ -10,26 +10,29 @@ import UIKit
 import CoreLocation
 import MapKit
 
+let placeApi = PlacesApi()
+var places: [Place]?
+
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var map: MKMapView!
-    //var latitudeInit: Double = 37.971538
-    //var longitudeInit: Double = 23.725751
-    //var coordinateInit :  CLLocationCoordinate2D {
-    //return CLLocationCoordinate2D(latitude: latitudeInit, longitude: longitudeInit)
-    //}
     var locationManager = CLLocationManager()
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let coordinateInit = places[(indexPath?.row ?? 0)]
+        
+        places = placeApi.getLieux()
+        let currentRow = PlaceContext.shared.indexPath?.row ?? 0
+        let currentLatitude = Double((places?[currentRow].longitude)!)
+        let currentLongitude = Double((places?[currentRow].latitude)!)
+        let currentcoordinate = CLLocationCoordinate2D(latitude: currentLatitude, longitude: currentLongitude)
         let span = MKCoordinateSpan(latitudeDelta: 5, longitudeDelta: 5)
-        let region = MKCoordinateRegion(center: coordinateInit, span: span)
+        let region = MKCoordinateRegion(center: currentcoordinate, span: span)
         map.setRegion(region, animated: true)
         map.delegate = self as! MKMapViewDelegate
-        let acropole = Poi(title: "Acropole", coordinate: coordinateInit)
-        map.addAnnotation(acropole)
+        let point = Poi(title: (places?[currentRow].title)!, coordinate: currentcoordinate)
+        map.addAnnotation(point)
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -41,7 +44,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         let mescoords = locations[0]
         let coordinate2d = CLLocationCoordinate2D(latitude: mescoords.coordinate.latitude, longitude: mescoords.coordinate.longitude)
         let monpoint = Poi(title: "Ma position", coordinate: coordinate2d)
-        let coord = CLLocation(latitude: latitudeInit, longitude: longitudeInit)
+        let coord = CLLocation(latitude: Double((places?[PlaceContext.shared.indexPath?.row ?? 0].longitude)!), longitude: Double((places?[PlaceContext.shared.indexPath?.row ?? 0].latitude)!))
         let distance = mescoords.distance(from: coord) / 1000
         map.addAnnotation(monpoint)
     }
