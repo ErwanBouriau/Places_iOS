@@ -13,16 +13,17 @@ import MapKit
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var map: MKMapView!
-    var latitudeInit: Double = 37.971538
-    var longitudeInit: Double = 23.725751
-    var coordinateInit :  CLLocationCoordinate2D {
-    return CLLocationCoordinate2D(latitude: latitudeInit, longitude: longitudeInit)
-    }
+    //var latitudeInit: Double = 37.971538
+    //var longitudeInit: Double = 23.725751
+    //var coordinateInit :  CLLocationCoordinate2D {
+    //return CLLocationCoordinate2D(latitude: latitudeInit, longitude: longitudeInit)
+    //}
     var locationManager = CLLocationManager()
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //let coordinateInit = places[(indexPath?.row ?? 0)]
         let span = MKCoordinateSpan(latitudeDelta: 5, longitudeDelta: 5)
         let region = MKCoordinateRegion(center: coordinateInit, span: span)
         map.setRegion(region, animated: true)

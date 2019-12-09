@@ -229,6 +229,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(UINib(nibName: "PlacesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "placesCollectionViewCell")
+        
+        self.title = "Places where you can't go"
     
     }
     
@@ -264,8 +266,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
     }
     
-//    func webSiteAction() {
-//        print("la cellule est \(indexPath?.row)")
-//    }
+    @IBAction func webSiteAction() {
+        let url = places[(indexPath?.row ?? 0)].site
+        UIApplication.shared.open(URL(string: url)!)
+    }
 }
 
