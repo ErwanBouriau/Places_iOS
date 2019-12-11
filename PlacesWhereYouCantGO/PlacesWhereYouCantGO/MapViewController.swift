@@ -27,7 +27,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         let currentLatitude = Double((places?[currentRow].longitude)!)
         let currentLongitude = Double((places?[currentRow].latitude)!)
         let currentcoordinate = CLLocationCoordinate2D(latitude: currentLatitude, longitude: currentLongitude)
-        let span = MKCoordinateSpan(latitudeDelta: 5, longitudeDelta: 5)
+        let span = MKCoordinateSpan(latitudeDelta: 9, longitudeDelta: 9)
         let region = MKCoordinateRegion(center: currentcoordinate, span: span)
         map.setRegion(region, animated: true)
         map.delegate = self as! MKMapViewDelegate
@@ -44,8 +44,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         let mescoords = locations[0]
         let coordinate2d = CLLocationCoordinate2D(latitude: mescoords.coordinate.latitude, longitude: mescoords.coordinate.longitude)
         let monpoint = Poi(title: "Ma position", coordinate: coordinate2d)
-        let coord = CLLocation(latitude: Double((places?[PlaceContext.shared.indexPath?.row ?? 0].longitude)!), longitude: Double((places?[PlaceContext.shared.indexPath?.row ?? 0].latitude)!))
-        let distance = mescoords.distance(from: coord) / 1000
         map.addAnnotation(monpoint)
     }
 }
