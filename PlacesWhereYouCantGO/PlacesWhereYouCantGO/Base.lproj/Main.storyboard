@@ -36,9 +36,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0o0-fz-ySj">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0o0-fz-ySj">
                                 <rect key="frame" x="0.0" y="818" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="barTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -68,9 +67,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OLl-6m-SIs">
-                                <rect key="frame" x="0.0" y="88" width="414" height="730"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OLl-6m-SIs">
+                                <rect key="frame" x="0.0" y="44" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="wmq-3G-GlI">
                                     <size key="itemSize" width="50" height="400"/>
@@ -86,6 +84,16 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0o0-fz-ySj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2ac-I8-znT"/>
+                            <constraint firstItem="OLl-6m-SIs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ENJ-d8-Vaz"/>
+                            <constraint firstItem="OLl-6m-SIs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="I6G-lz-lLm"/>
+                            <constraint firstItem="0o0-fz-ySj" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="eq1-Y3-f8f"/>
+                            <constraint firstItem="0o0-fz-ySj" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="r96-en-z2W"/>
+                            <constraint firstItem="0o0-fz-ySj" firstAttribute="top" secondItem="OLl-6m-SIs" secondAttribute="bottom" id="rDp-Td-FMz"/>
+                            <constraint firstItem="0o0-fz-ySj" firstAttribute="top" secondItem="OLl-6m-SIs" secondAttribute="bottom" id="rzv-dX-53v"/>
+                            <constraint firstItem="OLl-6m-SIs" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tfW-B2-p2U"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>

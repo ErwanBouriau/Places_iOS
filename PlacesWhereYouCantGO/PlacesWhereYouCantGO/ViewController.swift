@@ -18,7 +18,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     let placeApi = PlacesApi()
     var places: [Place]?
     var locationManager = CLLocationManager()
-    var distance: Int?
+//    var distance: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +46,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "placesCollectionViewCell", for: indexPath)
             as! PlacesCollectionViewCell
         if let place = places?[indexPath.row] {
-            cell.displayContent(imagesrc: place.image, title: place.title, country: place.pays, distance: distance ?? 0, price: 150)
+            let distance = distances?[indexPath.row] ?? 0
+            cell.displayContent(imagesrc: place.image, title: place.title, country: place.pays, distance: distance, price: 150)
         }
         return cell
        }
@@ -72,9 +73,22 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let mescoords = locations[0]
-        let coordinate2d = CLLocationCoordinate2D(latitude: mescoords.coordinate.latitude, longitude: mescoords.coordinate.longitude)
-        let coord = CLLocation(latitude: Double((places?[PlaceContext.shared.indexPath?.row ?? 0].longitude)!), longitude: Double((places?[PlaceContext.shared.indexPath?.row ?? 0].latitude)!))
-        distance = Int(mescoords.distance(from: coord))
+        setDistances(mescoords)
+//        let coordinate2d = CLLocationCoordinate2D(latitude: mescoords.coordinate.latitude, longitude: mescoords.coordinate.longitude)
+//        let coord = CLLocation(latitude: Double((places?[PlaceContext.shared.indexPath?.row ?? 0].longitude)!), longitude: Double((places?[PlaceContext.shared.indexPath?.row ?? 0].latitude)!))
+//        distance = Int(mescoords.distance(from: coord))
+    }
+    
+    var distances: [Int]?
+    func setDistances(_ mescoords: CLLocation) {
+        distances = [Int]()
+        places?.forEach({ (place) in
+            let coord = CLLocation(latitude: Double(place.longitude), longitude: Double(place.latitude))
+            let distance = Int(mescoords.distance(from: coord))
+            distances?.append(distance)
+        })
+        collectionView.reloadData()
+        
     }
 }
 
