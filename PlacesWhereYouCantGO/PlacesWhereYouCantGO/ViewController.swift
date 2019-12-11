@@ -48,7 +48,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         if let place = places?[indexPath.row] {
             let distance = distances?[indexPath.row] ?? 0
             let price = ((Double(distance) / 1000.0 * 0.2)*100).rounded()/100
-            cell.displayContent(imagesrc: place.image, title: place.title, country: place.pays, distance: distance, price: price, desc: place.desc)
+            cell.displayImage(imagesrc: place.image)
+            cell.cardViewController.displayContent(title: place.title, country: place.pays, distance: distance, price: price, desc: place.desc)
         }
         return cell
        }
