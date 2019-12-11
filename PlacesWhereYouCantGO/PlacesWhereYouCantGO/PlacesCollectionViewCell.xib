@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -43,6 +43,13 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSP-Un-dIX">
+                        <rect key="frame" x="20" y="560" width="360" height="130"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
                 </subviews>
             </view>
             <constraints>
@@ -51,13 +58,17 @@
                 <constraint firstItem="yD3-KA-EeP" firstAttribute="top" secondItem="rSO-oW-VI9" secondAttribute="bottom" constant="25" id="CKw-42-epI"/>
                 <constraint firstItem="6Be-89-k6A" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="Cw4-zY-LGK"/>
                 <constraint firstAttribute="trailing" secondItem="N8q-Pg-QmG" secondAttribute="trailing" constant="20" id="O0q-d2-bOK"/>
+                <constraint firstAttribute="bottom" secondItem="cSP-Un-dIX" secondAttribute="bottom" constant="10" id="PCS-HF-M6a"/>
                 <constraint firstAttribute="bottom" secondItem="6Be-89-k6A" secondAttribute="bottom" constant="185" id="RJt-f2-hXp"/>
                 <constraint firstItem="rSO-oW-VI9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="VF1-sK-bMB"/>
                 <constraint firstItem="TEO-eN-Nkq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="WIf-sB-ySp"/>
+                <constraint firstItem="cSP-Un-dIX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="WY9-OU-HQr"/>
                 <constraint firstAttribute="bottom" secondItem="rSO-oW-VI9" secondAttribute="bottom" constant="240" id="bSa-IK-RP3"/>
                 <constraint firstItem="TEO-eN-Nkq" firstAttribute="top" secondItem="6Be-89-k6A" secondAttribute="bottom" constant="10" id="cBt-JL-fA9"/>
                 <constraint firstItem="rSO-oW-VI9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fu4-0j-cch"/>
+                <constraint firstAttribute="trailing" secondItem="cSP-Un-dIX" secondAttribute="trailing" constant="20" id="hmV-cI-F2A"/>
                 <constraint firstAttribute="trailing" secondItem="rSO-oW-VI9" secondAttribute="trailing" id="hq8-3Y-PsE"/>
+                <constraint firstItem="cSP-Un-dIX" firstAttribute="top" secondItem="N8q-Pg-QmG" secondAttribute="bottom" constant="10" id="iYR-n7-Xxa"/>
                 <constraint firstItem="6Be-89-k6A" firstAttribute="top" secondItem="rSO-oW-VI9" secondAttribute="bottom" constant="10" id="ivV-sN-iIL"/>
                 <constraint firstItem="N8q-Pg-QmG" firstAttribute="top" secondItem="yD3-KA-EeP" secondAttribute="bottom" constant="25" id="nnZ-Kw-PYG"/>
             </constraints>
@@ -65,6 +76,7 @@
             <size key="customSize" width="400" height="700"/>
             <connections>
                 <outlet property="placeCountry" destination="TEO-eN-Nkq" id="yiV-8x-fEk"/>
+                <outlet property="placeDesc" destination="cSP-Un-dIX" id="xF7-yW-8N0"/>
                 <outlet property="placeDistance" destination="yD3-KA-EeP" id="vdS-1I-KoC"/>
                 <outlet property="placeImage" destination="rSO-oW-VI9" id="y0Q-e1-0MM"/>
                 <outlet property="placeName" destination="6Be-89-k6A" id="Drx-T7-2jM"/>
