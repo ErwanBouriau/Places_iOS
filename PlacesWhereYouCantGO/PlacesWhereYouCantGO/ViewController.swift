@@ -47,7 +47,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             as! PlacesCollectionViewCell
         if let place = places?[indexPath.row] {
             let distance = distances?[indexPath.row] ?? 0
-            cell.displayContent(imagesrc: place.image, title: place.title, country: place.pays, distance: distance, price: 150)
+            let price = ((Double(distance) / 1000.0 * 0.2)*100).rounded()/100
+            cell.displayContent(imagesrc: place.image, title: place.title, country: place.pays, distance: distance, price: price)
         }
         return cell
        }

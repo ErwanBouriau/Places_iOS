@@ -21,7 +21,7 @@ class PlacesCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func displayContent(imagesrc: String, title: String, country: String, distance: Int, price: Int) {
+    func displayContent(imagesrc: String, title: String, country: String, distance: Int, price: Double) {
         placeImage.image = UIImage(named: imagesrc)
         placeName.text = title
         placeCountry.text = country
