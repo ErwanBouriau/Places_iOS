@@ -18,6 +18,7 @@ public struct Place {
     let desc: String
 }
 
+//Classe correspondant à notre API (créée à la main)
 public class PlacesApi {
     
     public func getLieux() -> [Place] {

@@ -10,6 +10,7 @@ import Foundation
 import MapKit
 import UIKit
 
+//Classe point avec un titre pour son nom et des coordonnées
 class Poi: NSObject, MKAnnotation {
     var title: String?
     var coordinate: CLLocationCoordinate2D
