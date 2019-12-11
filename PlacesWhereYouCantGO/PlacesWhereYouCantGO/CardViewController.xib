@@ -23,18 +23,23 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sI4-ry-q5X">
+                <view autoresizesSubviews="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="sI4-ry-q5X">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="42"/>
                     <subviews>
-                        <view alpha="0.40000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vBE-Fg-wQJ">
+                        <view alpha="0.40000000000000002" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="vBE-Fg-wQJ">
                             <rect key="frame" x="173" y="18" width="68" height="6"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="6" id="6aN-oH-1gk"/>
+                                <constraint firstAttribute="width" constant="68" id="FHf-2l-WiY"/>
+                            </constraints>
                         </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="42" id="cX9-yS-M8Y"/>
+                        <constraint firstItem="vBE-Fg-wQJ" firstAttribute="centerY" secondItem="sI4-ry-q5X" secondAttribute="centerY" id="gNa-de-h8v"/>
+                        <constraint firstItem="vBE-Fg-wQJ" firstAttribute="centerX" secondItem="sI4-ry-q5X" secondAttribute="centerX" id="zXw-SY-iXn"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYK-tI-7Ec">
